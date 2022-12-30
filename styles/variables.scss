@@ -1,0 +1,18 @@
+:root {
+	--main-font-family: 'Roboto', sans-serif;
+}
+
+
+.light {
+	--bg-color: green;
+	--text-color: #333;
+
+	--main-bg-color: #ccc;
+}
+
+.dark {
+	--bg-color: #666;
+	--text-color: white;
+
+	--main-bg-color: #222;
+}
