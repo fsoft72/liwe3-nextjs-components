@@ -1,0 +1,16 @@
+.toolbar {
+	background-color: var(--main-bg-darker);
+
+	display: flex;
+	flex-direction: row;
+
+	align-items: center;
+}
+
+.separator {
+	width: 1px;
+	height: 30px;
+
+	border: 0;
+	border-right: 1px solid var(--border-color);
+}

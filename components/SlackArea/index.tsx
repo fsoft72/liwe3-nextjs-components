@@ -22,9 +22,28 @@ lowlight.registerLanguage( 'ts', ts );
 lowlight.registerLanguage( 'py', py );
 
 import classes from './index.module.scss';
+import Toolbar, { Separator } from '../Toolbar';
+import ToggleButton from '../ToggleButton';
+import { useState } from 'react';
 
 
 const SlackArea = () => {
+	const [ bold, setBold ] = useState( false );
+	const [ italic, setItalic ] = useState( false );
+	const [ strike, setStrike ] = useState( false );
+
+	const toggleBold = () => {
+		setBold( !bold );
+	};
+
+	const toggleItalic = () => {
+		setItalic( !italic );
+	};
+
+	const toggleStrike = () => {
+		setStrike( !strike );
+	};
+
 	const editor = useEditor( {
 		extensions: [
 			Document,
@@ -45,7 +64,25 @@ const SlackArea = () => {
 	} );
 
 	return (
-		<EditorContent className={classes.slackEditor} editor={editor} />
+		<>
+			<Toolbar sx={{ gap: '2px', padding: '8px' }}>
+				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleBold} toggled={bold}><b>B</b></ToggleButton>
+				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleItalic} toggled={italic}><i>I</i></ToggleButton>
+				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}><strike>S</strike></ToggleButton>
+				<Separator />
+				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>Link</ToggleButton>
+				<Separator />
+				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>UL</ToggleButton>
+				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>OL</ToggleButton>
+				<Separator />
+				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>Quote</ToggleButton>
+				<Separator />
+				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>Code</ToggleButton>
+				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>CodeBlock</ToggleButton>
+				<Separator />
+			</Toolbar>
+			<EditorContent className={classes.slackEditor} editor={editor} />
+		</>
 	);
 };
 
