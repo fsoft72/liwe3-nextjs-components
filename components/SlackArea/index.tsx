@@ -25,7 +25,12 @@ import classes from './index.module.scss';
 import Toolbar, { Separator } from '../Toolbar';
 import ToggleButton from '../ToggleButton';
 import { useState } from 'react';
-
+import LinkIcon from '../../icons/LinkIcon';
+import ListUnordered from '../../icons/ListUnordered';
+import ListOrdered from '../../icons/ListOrdered';
+import ArrowUTurn from '../../icons/ArrowUTurn';
+import CodeBracket from '../../icons/CodeBracket';
+import CodeBracketSquare from '../../icons/CodeBracketSquare';
 
 const SlackArea = () => {
 	const [ bold, setBold ] = useState( false );
@@ -60,28 +65,30 @@ const SlackArea = () => {
 				lowlight,
 			} ),
 		],
-		content: '<p>Hello World! 🌎️</p>',
+		content: '<p>Hello World!</p>',
 	} );
 
 	return (
 		<>
 			<Toolbar sx={{ gap: '2px', padding: '8px' }}>
-				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleBold} toggled={bold}><b>B</b></ToggleButton>
-				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleItalic} toggled={italic}><i>I</i></ToggleButton>
-				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}><strike>S</strike></ToggleButton>
+				<ToggleButton sx={{ width: '32px', height: '32px' }} onClick={toggleBold} toggled={bold}><b>B</b></ToggleButton>
+				<ToggleButton sx={{ width: '32px', height: '32px' }} onClick={toggleItalic} toggled={italic}><i>I</i></ToggleButton>
+				<ToggleButton sx={{ width: '32px', height: '32px' }} onClick={toggleStrike} toggled={strike}><strike>S</strike></ToggleButton>
 				<Separator />
-				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>Link</ToggleButton>
+				<ToggleButton sx={{ width: '32px', height: '32px' }} onClick={toggleStrike} toggled={strike}> <LinkIcon /> </ToggleButton>
 				<Separator />
-				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>UL</ToggleButton>
-				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>OL</ToggleButton>
+				<ToggleButton sx={{ width: '32px', height: '32px' }} onClick={toggleStrike} toggled={strike}> <ListUnordered /></ToggleButton>
+				<ToggleButton sx={{ width: '32px', height: '32px' }} onClick={toggleStrike} toggled={strike}><ListOrdered /></ToggleButton>
 				<Separator />
-				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>Quote</ToggleButton>
+				<ToggleButton sx={{ width: '32px', height: '32px' }} onClick={toggleStrike} toggled={strike}><ArrowUTurn /></ToggleButton>
 				<Separator />
-				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>Code</ToggleButton>
-				<ToggleButton sx={{ width: '16px', height: '16px' }} onClick={toggleStrike} toggled={strike}>CodeBlock</ToggleButton>
+				<ToggleButton sx={{ width: '32px', height: '32px' }} onClick={toggleStrike} toggled={strike}><CodeBracket /></ToggleButton>
+				<ToggleButton sx={{ width: '32px', height: '32px' }} onClick={toggleStrike} toggled={strike}><CodeBracketSquare /></ToggleButton>
 				<Separator />
 			</Toolbar>
 			<EditorContent className={classes.slackEditor} editor={editor} />
+
+			<i className="fa-solid fa-check"></i>
 		</>
 	);
 };

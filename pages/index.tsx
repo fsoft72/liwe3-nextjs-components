@@ -6,6 +6,8 @@ import SlackArea from '../components/SlackArea';
 import { ThemeSwitcher } from '../components/ThemeSwitcher';
 import ToggleButton from '../components/ToggleButton';
 import Toolbar from '../components/Toolbar';
+import LinkIcon from '../icons/LinkIcon';
+
 export default function Home () {
 	const [ toggled, setToggled ] = useState( false );
 
@@ -28,6 +30,8 @@ export default function Home () {
 			<Toolbar>
 				<ToggleButton onClick={toggleClick} toggled={toggled}>Hello</ToggleButton>
 			</Toolbar>
+
+			<LinkIcon />
 		</>
 	);
 }
