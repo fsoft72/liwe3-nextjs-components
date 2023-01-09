@@ -10,11 +10,8 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@tiptap/extension-bold": "^2.0.0-beta.209",
 		"@tiptap/extension-code-block-lowlight": "^2.0.0-beta.209",
-		"@tiptap/extension-italic": "^2.0.0-beta.209",
 		"@tiptap/extension-mention": "^2.0.0-beta.209",
-		"@tiptap/extension-strike": "^2.0.0-beta.209",
 		"@tiptap/react": "^2.0.0-beta.209",
 		"@tiptap/starter-kit": "^2.0.0-beta.209",
 		"@tiptap/suggestion": "^2.0.0-beta.209",

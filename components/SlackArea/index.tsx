@@ -2,12 +2,7 @@ import { useEditor, EditorContent } from '@tiptap/react';
 import Mention from '@tiptap/extension-mention';
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
 import { lowlight } from 'lowlight';
-import Bold from '@tiptap/extension-bold';
-import Italic from '@tiptap/extension-italic';
-import Strike from '@tiptap/extension-strike';
-import Document from '@tiptap/extension-document';
-import Paragraph from '@tiptap/extension-paragraph';
-import Text from '@tiptap/extension-text';
+import StarterKit from '@tiptap/starter-kit';
 import css from 'highlight.js/lib/languages/css';
 import js from 'highlight.js/lib/languages/javascript';
 import ts from 'highlight.js/lib/languages/typescript';
@@ -34,12 +29,7 @@ const SlackArea = () => {
 
 	const editor = useEditor( {
 		extensions: [
-			Document,
-			Paragraph,
-			Text,
-			Bold,
-			Italic,
-			Strike,
+			StarterKit,
 			Mention.configure( {
 				HTMLAttributes: {
 					class: 'mention',
