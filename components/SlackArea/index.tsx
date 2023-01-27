@@ -18,6 +18,7 @@ lowlight.registerLanguage( 'css', css );
 lowlight.registerLanguage( 'js', js );
 lowlight.registerLanguage( 'ts', ts );
 lowlight.registerLanguage( 'py', py );
+lowlight.registerLanguage( 'xml', html );
 
 import classes from './index.module.scss';
 import { useState } from 'react';
@@ -57,12 +58,12 @@ const SlackArea = () => {
 	} );
 
 	return (
-		<>
+		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
 			<SlackAreaMenuBar editor={editor} editorState={editorState} />
 			<EditorContent className={classes.slackEditor} editor={editor} />
 
 			<i className="fa-solid fa-check"></i>
-		</>
+		</div>
 	);
 };
 

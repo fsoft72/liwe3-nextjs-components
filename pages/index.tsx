@@ -31,7 +31,13 @@ export default function Home () {
 				<ToggleButton onClick={toggleClick} toggled={toggled}>Hello</ToggleButton>
 			</Toolbar>
 
+
+			<div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'row' }}>
+				<SlackArea />
+				<SlackArea />
+			</div>
 			<LinkIcon />
+
 		</>
 	);
 }
