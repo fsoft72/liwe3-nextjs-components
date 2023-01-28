@@ -44,7 +44,7 @@ const SlackArea = ( { showToolbar = true }: SlackAreaProps ) => {
 				lowlight,
 			} ),
 		],
-		content: '<p>Hello World!</p>',
+		content: '',
 
 		onTransaction ( { editor, transaction } ) {
 			let res: Record<string, any> = {};

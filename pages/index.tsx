@@ -17,6 +17,9 @@ export default function Home () {
 
 	return (
 		<>
+			<Toolbar>
+				<ToggleButton onClick={toggleClick} toggled={toggled}>Hello</ToggleButton>
+			</Toolbar>
 			<Button />
 			<SendButton label="Send message" onClick={() => console.log( 'Send click' )} />
 
@@ -27,9 +30,6 @@ export default function Home () {
 
 			<SlackArea />
 
-			<Toolbar>
-				<ToggleButton onClick={toggleClick} toggled={toggled}>Hello</ToggleButton>
-			</Toolbar>
 
 
 			<div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'row' }}>

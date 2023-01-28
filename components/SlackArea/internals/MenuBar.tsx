@@ -8,6 +8,8 @@ import ListUnordered from '../../../icons/ListUnordered';
 import ToggleButton from '../../ToggleButton';
 import Toolbar, { Separator } from '../../Toolbar';
 
+import classes from './MenuBar.module.scss';
+
 interface SlackAreaMenuBarProps {
 	editor: any;
 	editorState: Record<string, any>;
@@ -18,7 +20,7 @@ const SlackAreaMenuBar = ( { editor, editorState }: SlackAreaMenuBarProps ) => {
 		<Toolbar sx={{ gap: '2px', padding: '8px' }}>
 			<ToggleButton sx={{ width: '32px', height: '32px' }} toggled={editorState.bold} onClick={() => { editor.chain().focus().toggleBold().run(); }}><b>B</b></ToggleButton>
 			<ToggleButton sx={{ width: '32px', height: '32px' }} toggled={editorState.italic} onClick={() => { editor.chain().focus().toggleItalic().run(); }}><i>I</i></ToggleButton>
-			<ToggleButton sx={{ width: '32px', height: '32px' }} toggled={editorState.strike} onClick={() => { editor.chain().focus().toggleStrike().run(); }}><strike>S</strike></ToggleButton>
+			<ToggleButton sx={{ width: '32px', height: '32px' }} toggled={editorState.strike} onClick={() => { editor.chain().focus().toggleStrike().run(); }}><div className={classes.strike}>S</div></ToggleButton>
 			<Separator />
 			<ToggleButton sx={{ width: '32px', height: '32px' }} onClick={() => console.log( 'link' )} toggled={editorState.link}> <LinkIcon /> </ToggleButton>
 			<Separator />
