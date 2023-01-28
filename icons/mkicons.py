@@ -27,6 +27,17 @@ for icon in os.listdir(os.path.join(repo, "optimized", "24", "solid")):
     # read the svg file
     svg = open(os.path.join(repo, "optimized", "24", "solid", icon), "r").read()
 
+    # replace some attributes
+    reps = [
+        ("fill-rule", "fillRule"),
+        ("clip-rule", "clipRule"),
+        ("stroke-linecap", "strokeLinecap"),
+        ("stroke-linejoin", "strokeLinejoin"),
+        ("stroke-width", "strokeWidth"),
+    ]
+    for r in reps:
+        svg = svg.replace(r[0], r[1])
+
     # create the icon file
     fout = open(name + ".tsx", "w")
     fout.write(

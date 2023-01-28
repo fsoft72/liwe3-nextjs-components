@@ -24,9 +24,12 @@ import classes from './index.module.scss';
 import { useState } from 'react';
 import SlackAreaMenuBar from './internals/MenuBar';
 
-const SlackArea = () => {
-	const [ editorState, setEditorState ] = useState<Record<string, any>>( {} );
+interface SlackAreaProps {
+	showToolbar?: boolean;
+}
 
+const SlackArea = ( { showToolbar = true }: SlackAreaProps ) => {
+	const [ editorState, setEditorState ] = useState<Record<string, any>>( {} );
 
 	const editor = useEditor( {
 		extensions: [
@@ -59,7 +62,7 @@ const SlackArea = () => {
 
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-			<SlackAreaMenuBar editor={editor} editorState={editorState} />
+			{showToolbar && <SlackAreaMenuBar editor={editor} editorState={editorState} />}
 			<EditorContent className={classes.slackEditor} editor={editor} />
 
 			<i className="fa-solid fa-check"></i>
