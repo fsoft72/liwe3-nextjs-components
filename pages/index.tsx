@@ -40,6 +40,14 @@ export default function Home () {
 			<LinkIcon />
 
 			<TextInput name="test" placeholder="Test" required={true} />
+			<TextInput name="test" placeholder="Test" required={true} sx={{ width: '10rem' }} />
+			<TextInput
+				name="numeri"
+				placeholder="Insert numbers"
+				required={true}
+				validChars="0-9"
+				sx={{ width: '10rem' }}
+			/>
 
 		</>
 	);

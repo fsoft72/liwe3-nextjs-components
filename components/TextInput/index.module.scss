@@ -1,11 +1,11 @@
 .textInput {
 	position: relative;
-	margin: 50px auto;
-	width: 200px;
+	margin: 2.5rem auto;
+	width: 100%;
 }
 
 .textInput input {
-	font-size: 20px;
+	font-size: var(--text-size);
 	width: 100%;
 	border: none;
 	border-bottom: 2px solid var(--border-color);
@@ -23,10 +23,10 @@
 	pointer-events: none;
 }
 
-.textInput input[type="text"]:focus~.label,
-.textInput input[type="text"]:valid~.label {
-	top: -20px;
-	font-size: 16px;
+.textInput input:focus~.label,
+.textInput input:valid~.label {
+	top: -1rem;
+	font-size: 0.9rem;
 	color: var(--text-color);
 }
 
@@ -35,7 +35,6 @@
 	bottom: 0;
 	left: 0;
 	height: 2px;
-	width: 100%;
 	background-color: #333;
 	transform: scaleX(0);
 	transition: all 0.3s ease;
