@@ -7,6 +7,7 @@ import { ThemeSwitcher } from '../components/ThemeSwitcher';
 import ToggleButton from '../components/ToggleButton';
 import Toolbar from '../components/Toolbar';
 import LinkIcon from '../icons/LinkIcon';
+import TextInput from '../components/TextInput';
 
 export default function Home () {
 	const [ toggled, setToggled ] = useState( false );
@@ -37,6 +38,8 @@ export default function Home () {
 				<SlackArea />
 			</div>
 			<LinkIcon />
+
+			<TextInput name="test" placeholder="Test" required={true} />
 
 		</>
 	);
