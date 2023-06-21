@@ -10,7 +10,9 @@ const PowerSwitchTestPage = () => {
 
         // read switch1 value
         const cb01 = data.get("cb01");
+        const cb02 = data.get("cb02");
         console.log("=== Cb01", cb01 ? "CHECKED" : "UNCHECKED");
+        console.log("=== Cb02", cb02 ? "CHECKED" : "UNCHECKED");
     }
 
     return (
@@ -20,10 +22,20 @@ const PowerSwitchTestPage = () => {
                 <CheckBox 
                     name="cb01" 
                     checked={true} 
-                    label={"round checkbox"} 
+                    label={"Squared checkbox"} 
                     type="squared"
                     onChange={(checked)=>{
                         console.log("=== cb01", checked);
+                        return checked;
+                    }}
+                />
+                <CheckBox 
+                    name="cb02" 
+                    checked={false} 
+                    label={"Rounded checkbox"} 
+                    type="rounded"
+                    onChange={(checked)=>{
+                        console.log("=== cb02", checked);
                         return checked;
                     }}
                 />

@@ -11,20 +11,21 @@
 }
 
 .container .checkmark {
-  width: 28px;
-  height: 28px;
+  width: 1.4rem;
+  height: 1.4rem;
   border-radius: 50%;
   background-color: var(--main-bg-darker);
   box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, rgba(0, 0, 0, 0.21) 0px 0px 0px 24px inset,
         var(--bg-color) 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
   cursor: pointer;
   position: relative;
+  overflow: visible;
 }
 
 .container .checkmark::after {
   content: "";
-  width: 18px;
-  height: 18px;
+  width: .9rem;
+  height: .9rem;
   border-radius: 50%;
   background-color: var(--main-bg-color);
   box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
@@ -48,7 +49,6 @@
 .container .label {
   margin-right: 10px;
   user-select: none;
-  font-weight: 700;
   cursor: pointer;
 }
 
@@ -62,6 +62,8 @@
 
 .container svg {
   overflow: visible;
+  width: 1.1em;
+  height: 1.1em;
 }
 
 .path {
