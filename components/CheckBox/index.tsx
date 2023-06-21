@@ -69,7 +69,6 @@ const CheckBox = ( props: CheckBoxProps ) => {
 	const {onChange} = props;
 	const initialCbState = props.checked ?? false;
 	const [cbState, setCbState] = useState(initialCbState);
-	const eventRef = useRef<HTMLDivElement>(null);
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setCbState(e.target.checked);
 		onChange?.(e.target.checked);
