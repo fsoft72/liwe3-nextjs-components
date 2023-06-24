@@ -4,6 +4,7 @@ import classes from './index.module.scss';
 interface AccordionProps {
 	children?: React.ReactNode;
 	openItem?: number;
+	sx?: Record<string, unknown>;
 }
 
 interface AccordionContextProps {
@@ -18,7 +19,7 @@ const AccordionContext = createContext<AccordionContextProps>( {
 	open: ( index: number ) => { },
 } );
 
-const Accordion = ( { children, openItem = -1 }: AccordionProps ) => {
+const Accordion = ( { children, openItem = -1, sx }: AccordionProps ) => {
 	const [ openedItem, setOpenedItem ] = useState( openItem );
 
 	const handleOpen = ( index: number ) => {
@@ -31,7 +32,7 @@ const Accordion = ( { children, openItem = -1 }: AccordionProps ) => {
 
 	return (
 		<AccordionContext.Provider value={{ openItem: openedItem, open: handleOpen }}>
-			<div className={classes.accordion}>
+			<div className={classes.accordion} style={{ ...sx }}>
 				{children}
 			</div>
 		</AccordionContext.Provider>
@@ -41,23 +42,26 @@ const Accordion = ( { children, openItem = -1 }: AccordionProps ) => {
 interface AccordionSectionProps {
 	title?: string;
 	index: number;
+	sx?: Record<string, unknown>;
 	children?: React.ReactNode;
 }
 
-const AccordionSection = ( { children, title, index }: AccordionSectionProps ) => {
+const AccordionSection = ( { children, title, index, sx }: AccordionSectionProps ) => {
 	const { openItem, open } = React.useContext( AccordionContext );
 	const isOpen = openItem === index;
 
 	return (
-		<div className={classes.section}>
+		<div className={`${ classes.section } ${ isOpen ? classes.open : '' }`} style={{ ...sx }}>
 			<div className={classes.title} onClick={() => open( index )}>
 				{title}
 				<div>
-					{openItem === index ? '-' : '+'}
+					{isOpen ? '-' : '+'}
 				</div>
 			</div>
-			{isOpen && <div className={`${ classes.content } ${ isOpen ? classes.open : '' }`}>{children}</div>}
-		</div >
+			<div className={classes.content}>
+				{children}
+			</div>
+		</div>
 	);
 };
 
