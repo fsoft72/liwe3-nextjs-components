@@ -47,7 +47,7 @@ const Rounded: React.FC<CheckBoxInternal> = (props) => {
 	);
 }
 
-const Squared: React.FC<CheckBoxInternal> = (props) => {
+const Squared = (props: CheckBoxInternal) => {
 	return (
 		<label className={classes.container} style={props.sx ?? {}}>
 			{props.label ? <span className={classes.label}>{props.label}</span> : null}

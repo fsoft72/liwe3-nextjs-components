@@ -1,8 +1,6 @@
-"use client";
-
 import CheckBox from '../../components/CheckBox/index';
 
-const PowerSwitchTestPage = () => {
+const TestPage = () => {
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -45,4 +43,4 @@ const PowerSwitchTestPage = () => {
     );
 }
 
-export default PowerSwitchTestPage;
+export default TestPage;
