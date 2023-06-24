@@ -1,8 +1,13 @@
 import classes from './index.module.scss';
 
-const Button = () => {
+interface ButtonProps {
+	label?: string;
+	onClick?: () => void;
+}
+
+const Button = ( { label = 'Click me', onClick }: ButtonProps ) => {
 	return (
-		<button className={classes.button}>Click me</button>
+		<button className={classes.button} onClick={onClick}>{label}</button>
 	);
 };
 
