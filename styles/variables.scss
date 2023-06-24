@@ -12,16 +12,16 @@
 }
 
 .light {
-	--bg-color: green;
+	--bg-color: rgba(72, 130, 183,1);
+	--bg-secondary-color: rgba(183, 132, 72, 1);
 	--text-color: #333;
 	--text-color-lighter: #666;
 
-	--main-bg-color: #ccc;
-	--main-bg-darker: #999;
+	--main-bg-color: rgba(204, 204, 204, 1);
+	--main-bg-darker:rgba(153,153,153,1;) 
 
 
 	--border-color: #222;
-
 }
 
 .dark {
