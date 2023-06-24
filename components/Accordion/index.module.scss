@@ -1,0 +1,38 @@
+.accordion {
+	max-width: 800px;
+	padding: 10px;
+	border-radius: 5px;
+
+	background-color: var(--main-bg-darker);
+	color: var(--text-color);
+}
+
+.section {
+	margin-bottom: 10px;
+	padding: 10px;
+	border-radius: 5px;
+
+	background-color: var(--main-bg-color);
+	color: var(--text-color-lighter);
+
+	transition: max-height 1.0s linear;
+	max-height: 0;
+	min-height: 30px;
+
+	overflow: hidden;
+}
+
+.section.open {
+	max-height: 1000px;
+}
+
+.section .title {
+	display: flex;
+	justify-content: space-between;
+
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+
+	height: 2ex;
+}
