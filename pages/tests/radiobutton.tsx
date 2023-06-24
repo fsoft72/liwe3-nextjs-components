@@ -1,6 +1,6 @@
 import RadioButton from '../../components/RadioButton/index';
 
-const RadioButtonTestPage = () => {
+const TestPage = () => {
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -53,4 +53,4 @@ const RadioButtonTestPage = () => {
     );
 }
 
-export default RadioButtonTestPage;
+export default TestPage;
