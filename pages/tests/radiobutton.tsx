@@ -1,5 +1,3 @@
-"use client";
-
 import RadioButton from '../../components/RadioButton/index';
 
 const RadioButtonTestPage = () => {
@@ -8,9 +6,11 @@ const RadioButtonTestPage = () => {
 
         const data = new FormData(e.currentTarget);
 
-        // read switch1 value
+        // read radios value
         const rb01 = data.get("rb01");
-        console.log("=== Rb01", rb01 ? "CHECKED" : "UNCHECKED");
+        const rb02 = data.get("rb02");
+        console.log("=== Rb01 value:", rb01 );
+        console.log("=== Rb02 value:", rb02 );
     }
 
     const radios = [
@@ -32,13 +32,20 @@ const RadioButtonTestPage = () => {
     ];
     return (
         <div>
-            <h1>CheckBox Test</h1>
+            <h1>RadioButton Test</h1>
             <form onSubmit={submit}>
                 <RadioButton
                     name="rb01"
                     radios={radios}
-                    onChange={(checked:boolean) => { console.log("=== Checked", checked); return true; }}
+                    onChange={(value:string) => { console.log("=== Value rb01", value); return true; }}
                     type="rounded"
+                />
+                <RadioButton
+                    name="rb02"
+                    radios={radios}
+                    onChange={(value:string) => { console.log("=== Value rb02", value); return true; }}
+                    type="squared"
+                    direction="row"
                 />
                 <input type="submit" value="Submit" />
             </form>
