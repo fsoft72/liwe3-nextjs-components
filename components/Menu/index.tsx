@@ -1,25 +1,52 @@
+import React, { createContext, useState } from 'react';
 import classes from './index.module.scss';
 
 interface MenuProps {
 	children?: React.ReactNode;
+	isOpen: boolean;
 }
 
-const Menu = ( { children }: MenuProps ) => {
+interface MenuContextProps {
+	isOpen: boolean;
+	toggleMenu: () => void;
+}
+
+// This context is used to handle the state of the menu open / close
+const MenuContext = createContext<MenuContextProps>( {
+	isOpen: false,
+	toggleMenu: () => { },
+} );
+
+const Menu = ( { children, isOpen = false }: MenuProps ) => {
+	const [ menuOpen, setMenuOpen ] = useState( isOpen );
+
 	return (
-		<div className={classes.menu}>
-			{children}
-		</div>
+		<MenuContext.Provider value={{ isOpen: menuOpen, toggleMenu: () => setMenuOpen( !menuOpen ) }}>
+			<div className={classes.menu}>
+				{children}
+			</div>
+		</MenuContext.Provider>
 	);
 };
 
 interface MenuHandlerProps {
-	children?: React.ReactNode;
+	label: string;
+	onToggle?: ( isOpen: boolean ) => void;
 }
 
-const MenuHandler = ( { children }: MenuHandlerProps ) => {
+const MenuHandler = ( { label, onToggle }: MenuHandlerProps ) => {
+	const { toggleMenu, isOpen } = React.useContext( MenuContext );
+
+	const _toggleMenu = () => {
+		toggleMenu();
+		onToggle && onToggle( isOpen );
+	};
+
 	return (
 		<div className={classes.handler}>
-			{children}
+			<button onClick={_toggleMenu}>
+				{label}
+			</button>
 		</div>
 	);
 };
@@ -29,8 +56,9 @@ interface MenuListProps {
 }
 
 const MenuList = ( { children }: MenuListProps ) => {
+	const { isOpen } = React.useContext( MenuContext );
 	return (
-		<div className={classes.list}>
+		<div className={classes.list} style={{ display: isOpen ? 'block' : 'none' }}>
 			{children}
 		</div>
 	);
@@ -48,27 +76,5 @@ const MenuItem = ( { children }: MenuItemProps ) => {
 	);
 };
 
-interface MenuIconProps {
-	children?: React.ReactNode;
-}
-
-const MenuIcon = ( { children }: MenuIconProps ) => {
-	return (
-		<div className={classes.icon}>
-			{children}
-		</div>
-	);
-};
-
-const MenuText = () => {
-};
-
-const MenuDropdown = () => {
-};
-
-const MenuDropdownItem = () => {
-
-};
-
 export default Menu;
-export { Menu, MenuHandler, MenuList, MenuItem, MenuIcon, MenuText, MenuDropdown, MenuDropdownItem };
+export { Menu, MenuHandler, MenuList, MenuItem, };
