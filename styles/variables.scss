@@ -1,3 +1,6 @@
+@import 'colors';
+@import 'typography';
+
 :root {
 	--main-font-family: 'Roboto', sans-serif;
 
@@ -11,7 +14,30 @@
 	--text-size: 20px;
 }
 
+// LIGHT THEME
 .light {
+
+	--primaryColor : #{$liwePrimaryColorLight};
+	--darkerPrimaryColor : #{$liweDarkerPrimaryColorLight};
+	--lighterPrimaryColor : #{$liweLighterPrimaryColorLight};
+	--compPrimaryColor : #{$liweCompPrimaryColorLight};
+
+	--secondaryColor : #{$liweSecondaryColorLight};
+	--darkerSecondaryColor : #{$liweDarkerSecondaryColorLight};
+	--lighterSecondaryColor : #{$liweLighterSecondaryColorLight};
+	--compSecondaryColor : #{$liweCompSecondaryColorLight};
+
+	--mainBgColor : #{$liweMainBgColorLight};
+
+	--defaultColor : #{$liweDarkerPrimaryColorLight};
+	--dangerColor : #{$liweDangerColorLight};
+	--warningColor : #{$liweWarningColorLight};
+	--infoColor : #{$liweInfoColorLight};
+	--successColor : #{$liweSuccessColorLight};
+	--lightColor : #{$liweLightColorLight};
+	--darkColor : #{$liweDarkColorLight};
+
+	// LEGACY
 	--bg-color: rgba(72, 130, 183,1);
 	--bg-secondary-color: rgba(183, 132, 72, 1);
 	--text-color: #333;
@@ -20,11 +46,32 @@
 	--main-bg-color: rgba(204, 204, 204, 1);
 	--main-bg-darker:rgba(153,153,153,1;) 
 
-
 	--border-color: #222;
 }
 
+// DARK THEME
 .dark {
+
+	--primaryColor : #{$liwePrimaryColor};
+	--darkerPrimaryColor : #{$liweDarkerPrimaryColor};
+	--lighterPrimaryColor : #{$liweLighterPrimaryColor};
+	--compPrimaryColor : #{$liweCompPrimaryColor};
+	
+	--secondaryColor : #{$liweSecondaryColor};
+	--darkerSecondaryColor : #{$liweDarkerSecondaryColor};
+	--lighterSecondaryColor : #{$liweLighterSecondaryColor};
+	--compSecondaryColor : #{$liweCompSecondaryColor};
+
+	--defaultColor : #{$liweDarkerPrimaryColor};
+	--mainBgColor : #{$liweMainBgColor};
+	--dangerColor : #{$liweDangerColor};
+	--warningColor : #{$liweWarningColor};
+	--infoColor : #{$liweInfoColor};
+	--successColor : #{$liweSuccessColor};
+	--lightColor : #{$liweLightColor};
+	--darkColor : #{$liweDarkColor};
+
+	// LEGACY
 	--bg-color: #666;
 	--text-color: white;
 	--text-color-lighter: #ccc;

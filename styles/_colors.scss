@@ -1,0 +1,41 @@
+@import "mixins/colors";
+
+// dark theme colors
+$liwePrimaryColor: rgba(78, 36, 94, 1);
+$liweDarkerPrimaryColor: liweDarkenColor($liwePrimaryColor);
+$liweLighterPrimaryColor: liweLighterColor($liwePrimaryColor);
+$liweCompPrimaryColor: liweComplementaryColor($liwePrimaryColor);
+
+$liweSecondaryColor: rgba(7.5, 9, 14.5, 1);
+$liweDarkerSecondaryColor: liweDarkenColor($liweSecondaryColor);
+$liweLighterSecondaryColor: liweLighterColor($liweSecondaryColor);
+$liweCompSecondaryColor: liweComplementaryColor($liweSecondaryColor);
+
+$liweMainBgColor: liweLighterColor($liwePrimaryColor);
+
+$liweDangerColor: rgba(64, 9.5, 65, 1); 
+$liweWarningColor: rgba(52, 40.5, 79, 1);
+$liweInfoColor: rgba(3, 20 ,74, 1);
+$liweSuccessColor: rgba(3, 88, 86, 1);
+$liweLightColor: rgba(255, 255, 255, 1);
+$liweDarkColor: rgba(0, 0, 0, 1);
+
+// light theme colors
+$liwePrimaryColorLight: rgba(169, 169, 169, 1);
+$liweDarkerPrimaryColorLight: liweDarkenColor($liwePrimaryColorLight);
+$liweLighterPrimaryColorLight: liweLighterColor($liwePrimaryColorLight);
+$liweCompPrimaryColorLight: liweComplementaryColor($liwePrimaryColorLight);
+
+$liweSecondaryColorLight: rgba(202, 235, 242, 1);
+$liweDarkerSecondaryColorLight: liweDarkenColor($liweSecondaryColorLight);
+$liweLighterSecondaryColorLight: liweLighterColor($liweSecondaryColorLight);
+$liweCompSecondaryColorLight: liweComplementaryColor($liweSecondaryColorLight);
+
+$liweMainBgColorLight: rgba(239, 239, 239, 1);
+
+$liweDangerColorLight: rgba(255, 59, 63, 1);
+$liweWarningColorLight: rgba(52, 40.5, 79, 1);
+$liweInfoColorLight: rgba(3, 20 ,74, 1);
+$liweSuccessColorLight: rgba(3, 88, 86, 1);
+$liweLightColorLight: rgba(255, 255, 255, 1);
+$liweDarkColorLight: rgba(0, 0, 0, 1);

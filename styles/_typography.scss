@@ -1,0 +1,138 @@
+$liwe-default-font-size: 16px;
+$liwe-default-font-family: 'Roboto';
+$liwe-default-font-weight: 400; 
+
+$liwe-default-line-height: 1.2;
+$liwe-default-letter-spacing: 0;
+$liwe-default-text-align: left;
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: calc($liwe-default-font-weight /2 * 3);
+  line-height: $liwe-default-line-height;
+  letter-spacing: $liwe-default-letter-spacing;
+  text-align: $liwe-default-text-align;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: calc($liwe-default-font-weight
+/2 * 3);
+  line-height: $liwe-default-line-height;
+  letter-spacing: $liwe-default-letter-spacing;
+  text-align: $liwe-default-text-align;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: calc($liwe-default-font-weight /2 * 3);
+  line-height: $liwe-default-line-height;
+  letter-spacing: $liwe-default-letter-spacing;
+  text-align: $liwe-default-text-align;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: calc($liwe-default-font-weight /2 * 3);
+  line-height: $liwe-default-line-height;
+  letter-spacing: $liwe-default-letter-spacing;
+  text-align: $liwe-default-text-align;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: calc($liwe-default-font-weight /2 * 3);
+  line-height: $liwe-default-line-height;
+  letter-spacing: $liwe-default-letter-spacing;
+  text-align: $liwe-default-text-align;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: calc($liwe-default-font-weight /2 * 3);
+  line-height: $liwe-default-line-height;
+  letter-spacing: $liwe-default-letter-spacing;
+  text-align: $liwe-default-text-align;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: $liwe-default-font-weight;
+  line-height: $liwe-default-line-height;
+  letter-spacing: 0;
+  text-align: $liwe-default-text-align;
+}
+
+a {
+  font-size: 1rem;
+  font-weight: $liwe-default-font-weight;
+  line-height: $liwe-default-line-height;
+  letter-spacing: 0;
+  text-align: $liwe-default-text-align;
+}
+
+li {
+  font-size: 1rem;
+  font-weight: $liwe-default-font-weight;
+  line-height: $liwe-default-line-height;
+  letter-spacing: 0;
+  text-align: $liwe-default-text-align;
+}
+
+blockquote {
+  font-size: 1rem;
+  font-weight: $liwe-default-font-weight;
+  line-height: $liwe-default-line-height;
+  letter-spacing: 0;
+  text-align: $liwe-default-text-align;
+}
+
+small {
+  font-size: 0.875rem;
+  font-weight: $liwe-default-font-weight;
+  line-height: $liwe-default-line-height;
+  letter-spacing: 0;
+  text-align: $liwe-default-text-align;
+}
+
+code {
+  font-size: 1rem;
+  font-weight: $liwe-default-font-weight;
+  line-height: $liwe-default-line-height;
+  letter-spacing: 0;
+  text-align: $liwe-default-text-align;
+}
+
+pre {
+  font-size: 1rem;
+  font-weight: $liwe-default-font-weight;
+
+  line-height: $liwe-default-line-height;
+  letter-spacing: 0;
+  text-align: $liwe-default-text-align;
+}
+
+kbd {
+  font-size: 1rem;
+  font-weight: $liwe-default-font-weight;
+  line-height: $liwe-default-line-height;
+  letter-spacing: 0;
+  text-align: $liwe-default-text-align;
+}
+
+strong {
+  font-size: 1rem;
+  font-weight: calc($liwe-default-font-weight /2 * 3);
+  line-height: $liwe-default-line-height;
+  letter-spacing: 0;
+  text-align: $liwe-default-text-align;
+}
+
+.liwe-lead{
+    font-size: 1.25rem;
+    font-weight: $liwe-default-font-weight;
+    line-height: $liwe-default-line-height;
+    letter-spacing: 0;
+    text-align: $liwe-default-text-align;
+}
+// Path: styles/typography.scss
