@@ -1,14 +1,475 @@
-.body {
+@import 'typography';
+@import 'screens';
+@import 'layout';
+@import 'mixins/layout';
+
+html {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-size: var(--liwe-font-size);
+}
+
+body {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	background: var(--main-bg-color);
 
-	font-family: var(--main-font-family);
-	font-size: var(--text-size);
+	background-color: var(--liwe-main-bg-color);
+
+	font-family: var(--liwe-default-font-family);
+	font-size: var(--liwe-font-size);
+	font-weight: var(--liwe-font-weight);
+	color: var(--liwe-default-color); 
+}
+
+/* Typography */
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: calc((var(--liwe-font-weight) /2) * 3);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: $liweDefaultLetterSpacing;
+  text-align: $liweDefaultTextAlign;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: calc((var(--liwe-font-weight) /2) * 3);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: $liweDefaultLetterSpacing;
+  text-align: $liweDefaultTextAlign;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: calc((var(--liwe-font-weight) /2) * 3);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: $liweDefaultLetterSpacing;
+  text-align: $liweDefaultTextAlign;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: calc((var(--liwe-font-weight) /2) * 3);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: $liweDefaultLetterSpacing;
+  text-align: $liweDefaultTextAlign;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: calc((var(--liwe-font-weight) /2) * 3);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: $liweDefaultLetterSpacing;
+  text-align: $liweDefaultTextAlign;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: calc((var(--liwe-font-weight) /2) * 3);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: $liweDefaultLetterSpacing;
+  text-align: $liweDefaultTextAlign;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: var(--liwe-font-weight);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: 0;
+  text-align: $liweDefaultTextAlign;
+}
+
+a {
+  font-size: 1rem;
+  font-weight: var(--liwe-font-weight);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: 0;
+  text-align: $liweDefaultTextAlign;
+}
+
+li {
+  font-size: 1rem;
+  font-weight: var(--liwe-font-weight);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: 0;
+  text-align: $liweDefaultTextAlign;
+}
+
+blockquote {
+  font-size: 1rem;
+  font-weight: var(--liwe-font-weight);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: 0;
+  text-align: $liweDefaultTextAlign;
+}
+
+small {
+  font-size: 0.875rem;
+  font-weight: var(--liwe-font-weight);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: 0;
+  text-align: $liweDefaultTextAlign;
+}
+
+code {
+  font-size: 1rem;
+  font-weight: var(--liwe-font-weight);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: 0;
+  text-align: $liweDefaultTextAlign;
+}
+
+pre {
+  font-size: 1rem;
+  font-weight: var(--liwe-font-weight);
+
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: 0;
+  text-align: $liweDefaultTextAlign;
+}
+
+kbd {
+  font-size: 1rem;
+  font-weight: var(--liwe-font-weight);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: 0;
+  text-align: $liweDefaultTextAlign;
+}
+
+strong {
+  font-size: 1rem;
+  font-weight: calc((var(--liwe-font-weight) /2) * 3);
+  line-height: $liweDefaultLineHeight;
+  letter-spacing: 0;
+  text-align: $liweDefaultTextAlign;
+}
+
+.liweLead{
+	font-size: 1.25rem;
+	font-weight: calc((var(--liwe-font-weight) /2) * 2.5);
+	line-height: $liweDefaultLineHeight;
+	letter-spacing: 0;
+	text-align: $liweDefaultTextAlign;
+}
+
+/* LAYOUT */
+
+/* flex */
+.liweContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.flexStart {
+  justify-content: flex-start !important;
+}
+
+.flexEnd {
+  justify-content: flex-end !important;
+}
+
+.flexCenter {
+  justify-content: center !important;
+}
+
+.flexBetween {
+  justify-content: space-between !important;
+}
+
+.flexAround {
+  justify-content: space-around !important;
+}
+
+.flexEvenly {
+  justify-content: space-evenly !important;
+}
+
+.flexTop {
+  align-items: flex-start !important;
+}
+
+.flexBottom {
+  align-items: flex-end !important;
+}
+
+.flexMiddle {
+  align-items: center !important;
+}
+
+.flexStretch {
+  align-items: stretch !important;
+}
+
+.flexBaseline {
+  align-items: baseline !important;
+}
+
+.liweRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: -#{($liweGuttersX)};
+}
+
+.liweCol {
+  position: relative;
+  width: 100%;
+}
+
+.liweCol1 {
+	@include liweCol(1, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol2 {
+	@include liweCol(2, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol3 {
+	@include liweCol(3, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol4 {
+	@include liweCol(4, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol5 {
+	@include liweCol(5, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol6 {
+	@include liweCol(6, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol7 {
+	@include liweCol(7, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol8 {
+	@include liweCol(8, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol9 {
+	@include liweCol(9, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol10 {
+	@include liweCol(10, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol11 {
+	@include liweCol(11, $liweGuttersX, $liweGuttersY);
+}
+
+.liweCol12 {
+	@include liweCol(12, $liweGuttersX, $liweGuttersY);
+}
+
+.liweColOffset1 {
+  margin-left: 8.333333%;
+}
+
+.liweColOffset2 {
+  margin-left: 16.666667%;
+}
+
+.liweColOffset3 {
+  margin-left: 25%;
+}
+
+.liweColOffset4 {
+  margin-left: 33.333333%;
+}
+
+.liweColOffset5 {
+  margin-left: 41.666667%;
+}
+
+.liweColOffset6 {
+  margin-left: 50%;
+}
+
+.liweColOffset7 {
+  margin-left: 58.333333%;
+}
+
+.liweColOffset8 {
+  margin-left: 66.666667%;
+}
+
+.liweColOffset9 {
+  margin-left: 75%;
+}
+
+.liweColOffset10 {
+  margin-left: 83.333333%;
+}
+
+.liweColOffset11 {
+  margin-left: 91.666667%;
+}
+
+/* colors */
+
+.liweBgMain {
+  background-color: var(--liwe-main-bg-color);
+}
+
+.liweBgPrimary {
+  background-color: var(--liwe-primary-color);
+}
+
+.liweBgPrimaryDark {
+  background-color: var(--liwe-darker-primary-color);
+}
+
+.liweBgPrimaryLight {
+  background-color: var(--liwe-lighter-primary-color);
+}
+
+.liweBgPrimaryComp {
+  background-color: var(--liwe-comp-primary-color);
+}
+
+.liweBgSecondary {
+  background-color: var(--liwe-secondary-color);
+}
+
+.liweBgSecondaryDark {
+  background-color: var(--liwe-darker-secondary-color);
+}
+
+.liweBgSecondaryLight {
+  background-color: var(--liwe-lighter-secondary-color);
+}
+
+.liweBgSecondaryComp {
+  background-color: var(--liwe-comp-secondary-color);
+}
+
+.liweBgLight {
+  background-color: var(--liwe-lighter-secondary-color);
+}
+.liweBgSuccess {
+  background-color: var(--liwe-success-color);
+}
+
+.liweBgDanger {
+  background-color: var(--liwe-danger-color);
+}
+
+.liweBgWarning {
+  background-color: var(--liwe-warning-color);
+}
+
+.liweBgInfo {
+  background-color: var(--liwe-info-color);
+}
+
+.liweBgLight {
+  background-color: var(--liwe-light-color);
+}
+
+.liweBgDark {
+  background-color: var(--liwe-dark-color);
+}
+
+.liweTxtPrimary {
+  color: var(--liwe-primary-color);
+}
+
+.liweTxtPrimaryDark {
+  color: var(--liwe-darker-primary-color);
+}
+
+.liweTxtPrimaryLight {
+  color: var(--liwe-lighter-primary-color);
+}
+
+.liweTxtPrimaryComp {
+  color: var(--liwe-comp-primary-color);
+}
+
+.liweTxtSecondary {
+  color: var(--liwe-secondary-color);
+}
+
+.liweTxtSecondaryDark {
+  color: var(--liwe-darker-secondary-color);
+}
+
+.liweTxtSecondaryLight {
+  color: var(--liwe-lighter-secondary-color);
+}
+
+.liweTxtSecondaryComp {
+  color: var(--liwe-comp-secondary-color);
+}
+
+.liweTxtLight {
+  color: var(--liwe-light-color);
+
+}
+.liweTxtDark {
+  color: var(--liwe-dark-color);
+}
+
+.liweTxtSuccess {
+  color: var(--liwe-success-color);
+}
+
+.liweTxtDanger {
+  color: var(--liwe-danger-color);
+}
+
+.liweTxtWarning {
+  color: var(--liwe-warning-color);
+}
+
+.liweTxtInfo {
+  color: var(--liwe-info-color);
+}
+
+@media (max-width: #{$liweXs}) {
+  .liweContainer {
+	max-width: calc(#{$liweXs} - 1rem);
+  }
+}
+
+@media (min-width: #{$liweSm}) {
+  .liweContainer {
+	max-width: calc(#{$liweSm} - 2rem);
+  }
+}
+
+@media (min-width: #{$liweMd}) {
+  .liweContainer {
+	max-width: calc(#{$liweMd} - 3rem);
+  }
+}
+
+@media (min-width: #{$liweLg}) {
+  .liweContainer {
+	max-width: calc(#{$liweLg} - 3rem);
+  }
+}
+
+@media (min-width: #{$liweXl}) {
+  .liweContainer {
+	max-width: calc(#{$liweXl} - 3rem);
+  }
+}
+
+@media (min-width: #{$liweXxl}) {
+  .liweContainer {
+	max-width: calc(#{$liweXxl} - 3rem);
+  }
 }
 
 /* Basic editor styles */
