@@ -111,7 +111,7 @@ const TestPage = () => {
 				</div>
 				<div className="liweCol4">
 					<h4>KBD Keyboard input</h4>
-					<div>Paragraph with some <kbd>CTRL + ALT + CANC</kbd> text here</div>
+					<div>Paragraph with some kbd <kbd>CTRL+ALT+CANC</kbd> text here</div>
 				</div>
 				<div className="liweCol4">
 					<h4>Pre</h4>
@@ -132,17 +132,15 @@ const TestPage = () => {
 			<div className="liweRow">
 				<div className="liweCol12">
 					<h4>How it works</h4>
-					<ul>
-						<li>Rows must be placed within a <code>&lt;div&gt;</code> with the <code>.liweRow</code> class.</li>
-						<li>Use rows to create horizontal groups of columns.</li>
-						<li>Content should be placed within columns, and only columns may be immediate children of rows.</li>
-						<li>Predefined classes like <code>.liweCol4</code> and <code>.liweCol6</code> are available for quickly making grid layouts.</li>
-						<li>Columns create gutters (gaps between column content) via margin. That margin is offset in rows for the first and last column via negative margin on <code>.liweRow</code>.</li>
-						<li>The negative margin is why the examples below are outdented. It's so that content within grid columns is lined up with non-grid content. Gutters can be <b>customized</b> in <code>styles/layout.scss</code>.</li>
-						<li>Grid columns are created by specifying the number of 12 available columns (this number can be <b>customized</b> in <code>styles/layout.scss</code>) you wish to span. For example, three equal columns would use three <code>.liweCol4</code>.</li>
-						<li>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</li>
-						<li><span className="liweLead liweBgWarning liweTxtLight">TODO:</span> Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, e.g. applying any <code>.liweCol-md-*</code> class to an element will not only affect its styling on medium devices but also on large devices if a <code>.liweCol-lg-*</code> class is not present.</li>
-					</ul>
+					<div>Rows must be placed within a <code>&lt;div&gt;</code> with the <code>.liweRow</code> class.</div>
+					<div>Use rows to create horizontal groups of columns.</div>
+					<div>Content should be placed within columns, and only columns may be immediate children of rows.</div>
+					<div>Predefined classes like <code>.liweCol4</code> and <code>.liweCol6</code> are available for quickly making grid layouts.</div>
+					<div>Columns create gutters (gaps between column content) via margin. That margin is offset in rows for the first and last column via negative margin on <code>.liweRow</code>.</div>
+					<div>The negative margin is why the examples below are outdented. It&apos;s so that content within grid columns is lined up with non-grid content. Gutters can be <b>customized</b> in <code>styles/layout.scss</code>.</div>
+					<div>Grid columns are created by specifying the number of 12 available columns (this number can be <b>customized</b> in <code>styles/layout.scss</code>) you wish to span. For example, three equal columns would use three <code>.liweCol4</code>.</div>
+					<div>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</div>
+					<div><span className="liweLead liweBgWarning liweTxtLight">TODO:</span> Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, e.g. applying any <code>.liweCol-md-*</code> class to an element will not only affect its styling on medium devices but also on large devices if a <code>.liweCol-lg-*</code> class is not present.</div>
 				</div>
 			</div>
 		</div>
